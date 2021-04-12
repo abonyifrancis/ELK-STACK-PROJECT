@@ -4,18 +4,27 @@
 The files in this repository were used to configure the network depicted below.
 
 ![Elk-Diagram](Diagrams/Elk-Diagram.png)
+
 ![Elk-Stack-Diagram](Diagrams/Elk-Stack-Diagram.png)
+
 ![kibana-filebeat](Diagrams/kibana-filebeat.JPG)
+
 ![kibana-metricbeat](Diagrams/kibana-metricbeat.JPG)
+
 ![docker_ps_output](Diagrams/docker_ps_output.JPG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
 -_[install filebeat](Ansible/filebeat-playbook.yml)_
+
 -_[install metricbeat](Ansible/metricbeat-playbook.yml)_
+
 -_[install Apache](Ansible/Apache-playbook.yml)_
+
 -_[install Docker](Ansible/Docker-playbook.yml)_
+
 -_[install Elk-vm](Ansible/Elk-vm-playbook.yml)_
+
 -_[install Web-vm](Ansible/Webvm-playbook.yml)_
 
 This document contains the following details:
