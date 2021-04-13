@@ -44,8 +44,8 @@ Load balancing ensures that the application will be highly flexible, in addition
 -  What aspect of security do load balancers protect? What is the advantage of a jump box?_
     it protects the webservers and ensures that the webserver does not get overloaded by distributing traffic evenly across the webservers, the jumpbox helps with securing the internal network from bad actors and it creates an extra layer of security to the internal components. 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the files and system logs.
--  What does Filebeat watch for? it watches out for system logs
--  What does Metricbeat record?_ it watches out for operating system  e.g Ram, system usage.
+-  What does Filebeat watch for? it watches out for system logs.Filebeat plays the role of the logging agent—installed on the machine generating the log files, tailing them, and forwarding the data to either Logstash for more advanced processing or directly into Elasticsearch for indexing.
+-  What does Metricbeat record?_ it watches out for operating system  e.g Ram, system usage. Metricbeat is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -83,8 +83,10 @@ faster deployment of software
 Helps in software automation
 The playbook implements the following tasks: it was used to install the ELK container, python, docker.io, file and metric beats.
 - : In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- install Docker.
+- download image.
 - Deploying containers using Ansible and Docker.
-- Deploying Filebeat using Ansible.
+- Deploying Filebeat and metricbeat using Ansible.
 - Deploying the ELK stack on a server.
 
 
@@ -103,7 +105,11 @@ We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed: filebeats and metric beats
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+filebeat: it watches out for system logs.Filebeat plays the role of the logging agent—installed on the machine generating the log files, tailing them, and forwarding the data to either Logstash for more advanced processing or directly into Elasticsearch for indexing.
+metricbeat: it watches out for operating system  e.g Ram, system usage. Metricbeat is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
+
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
